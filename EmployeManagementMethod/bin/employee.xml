@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="employeeDao" class="com.cg.employeedao.EmployeeDao">
+	</bean>
+	
+	<bean id="employeeService" class="com.cg.employeeservice.EmployeeService">
+	<property name="addEmployeeDao" ref="employeeDao"></property>
+	</bean>
+	
+	<bean id="controller" class="com.cg.controller.Controller">
+	<property name="employeeController" ref="employeeService"></property>
+	</bean>
+
+</beans>
